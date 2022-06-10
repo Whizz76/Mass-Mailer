@@ -2,6 +2,7 @@ const express=require('express');
 const app=express();
 const sib=require('sib-api-v3-sdk');
 require('dotenv').config();
+const apiKey=require('./apiKey');
 const cors=require('cors');
 const SMTPPool = require('nodemailer/lib/smtp-pool');
 app.use(cors());
@@ -33,7 +34,7 @@ app.post('/sendMail',(req,res)=>{
     }
     const client=sib.ApiClient.instance;
     const apiKey=client.authentications['api-key'];
-    apiKey.apiKey='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';
+    apiKey.apiKey=apiKey;
     const tranEmailApi=new sib.TransactionalEmailsApi();
     const sender={
         email:details.mail,
