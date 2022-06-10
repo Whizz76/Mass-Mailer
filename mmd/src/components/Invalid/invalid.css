@@ -1,0 +1,13 @@
+.invalidMail{
+    color: white;
+    font-size: 100%;
+    letter-spacing: 0.5px;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    margin: 5px;
+    font-weight: lighter;
+}
+.modal-title{
+    color: white;
+    margin-top: 10px;
+}

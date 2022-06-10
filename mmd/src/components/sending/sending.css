@@ -1,0 +1,53 @@
+#header{
+    display: none;
+}
+#mailInformation{
+    color: white;
+    text-align: center;
+    font-family:'Barlow Condensed', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+#mailImage img{
+    border: none;
+    display: block;
+    margin: 10px auto 10px auto;
+    box-shadow: none;
+    width: 400px;
+    height: 400px;
+}
+#mailImage img:hover{
+    transform: scale(1);
+}
+#mailImage p{
+    color: white;
+    margin: 10px auto 10px auto;
+    font-family:'Barlow Condensed', sans-serif;
+    font-size: 90%;
+    letter-spacing: 1px;
+    font-weight: lighter;
+}
+@media (max-width:460px){
+    #mailImage img{
+        width: 300px;
+        height: 300px;
+    }
+}
+@media (max-width:360px){
+    #mailImage img{
+        width: 250px;
+        height: 250px;
+    }
+}
+@media (max-width:300px){
+    #mailImage img{
+        width: 200px;
+        height: 200px;
+    }
+}
+@media (max-width:400px){
+    #mailImage p{
+        font-size: 80%;
+    }
+}

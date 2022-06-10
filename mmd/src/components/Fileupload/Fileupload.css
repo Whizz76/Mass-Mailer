@@ -1,0 +1,161 @@
+.upload{
+    min-height: 100vh;
+    background-image: url('../../assets/next.jpg');
+    background-repeat: repeat;
+    background-size:100vw 50vw;
+    color: white;
+    
+
+}
+.upload h2{
+    margin: 0;
+    color: white;
+    position: relative;
+    top: 10px;
+}
+.file{
+    opacity: 0;
+}
+label{
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+}
+.csv,label{
+    display: block;
+    margin: 30px auto 40px auto;
+    height: 50px;
+    width: 20%;
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 130%;
+    font-weight: bolder;
+    color: #142865;
+    transition: 0.4s;
+   
+    cursor: pointer;
+    text-align: center;
+}
+.none{
+    display: none;
+}
+a{
+    display: block;
+    width: 20%;
+    margin: 10px auto 10px auto;
+}
+a>.csv{
+    width: 100%;
+}
+.csv:hover,label:hover{
+    transform: scale(1.2);
+    box-shadow: -20px 20px 20px rgba(0,0,0,0.3);
+}
+table{
+    border: 1px solid white;
+    background-color: #142865;
+    box-shadow: 0 2px 5px 0 #142865;
+    border-radius: 5px;
+    margin: 30px auto 0px auto;
+    opacity: 0.8;
+    
+    
+   
+}
+
+
+td{
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 2px;
+    font-family: 'Lemonada', cursive;
+    font-weight: bolder;
+    font-size: 100%;
+    display: block;
+   
+    text-align: center;
+    
+}
+th{
+    padding: 20px;
+    display: block;
+   text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: bolder;
+    font-size: 150%;
+}
+#proceed{
+    position: fixed;
+    background-color: white;
+    color: #142865;
+    height: 30px;
+   width: 100px;
+    bottom: 0px;
+    z-index: 2;
+    right:20px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 100%;
+    font-weight: bolder;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    padding: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+    
+}
+#proceed:hover{
+    transform: translate(15px,-5px);
+    box-shadow: -20px 20px 20px rgba(0,0,0,0.3);
+}
+@media (max-width:1000px){
+    .csv,label,.download{
+        width: 30%;
+    }
+}
+@media (max-width:660px){
+    .csv,label,.download{
+        width: 40%;
+    }
+}
+@media (max-width:500px){
+    .csv,label,.download{
+        width: 60%;
+    }
+    th{
+        padding: 10px;
+        font-size: 110%;
+        font-weight: lighter;
+    }
+    td{
+        padding: 5px;
+        font-size: 60%;
+        font-weight: lighter;
+    }
+}
+@media (max-width:350px){
+    .csv,label,.download{
+        width: 70%;
+    }
+}
+@media (max-width:700px){
+    #proceed{
+        right: 20px;
+    }
+}
+@media (max-width:500px){
+    #proceed{
+        right: 20px;
+    }
+}
+@media (max-width:620px){
+    #proceed{
+        right: 20px;
+    }
+}
+@media (max-width:360px){
+    #proceed{
+        right: 20px;
+    }
+}
