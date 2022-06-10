@@ -5,6 +5,7 @@ require('dotenv').config();
 const apiKey=require('./apiKey');
 const cors=require('cors');
 const SMTPPool = require('nodemailer/lib/smtp-pool');
+const demoMail=require('./demo.js');
 app.use(cors());
 app.use(express.json());
 app.listen(7800,()=>{
@@ -15,7 +16,7 @@ var recipients;
 app.post('/receiverMails',(req,res)=>{
     receiversMails=req.body.mails.split(',');
     console.log(receiversMails);
-    recipients=[{email:"demo87335@gmail.com"}]
+    recipients=[{email:`${demoMail}`}]
     receiversMails.forEach(r=>{
         var obj={};
         obj["email"]=`${r}`;
@@ -50,47 +51,11 @@ app.post('/sendMail',(req,res)=>{
         res.json({msg:"success"});
         console.log(result);
         receiversMails=[];
-        recipients=[{email:"demo87335@gmail.com"}]
+        recipients=[{email:`${demoMail}`}]
     }).catch((err)=>{
         res.json({msg:"failed"});
         console.log(err)})
-    /*const nodemailer=require('nodemailer');
-    //const xoauth2=require('xoauth2')
-    //var transporter = nodemailer.createTransport('smtps://demo87335%40gmail.com:demo1234@@smtp.gmail.com');
-
-let transporter=nodemailer.createTransport(new SMTPPool({
-    host:"smtp.gmail.com",
-    port:587,
-    auth:{
-       // type:"OAuth2",
-        user:"demo87335@gmail.com",
-        pass:"demo1234@",
-       clientId:"332255476679-mjrrj3t324crc4na0dilsk7f3v5gsds9.apps.googleusercontent.com",
-    clientSecret:"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",
-    refreshToken:"1//04BnCpqcc2xGVCgYIARAAGAQSNwF-L9Ir34GytFRQLp7XVNwqlY3IBhqGuD5EMQbMnDCBWE13EuqupFDA-bTpMXfKoTpaTAKQx-Q"
-    },
-    maxConnection: 5,
-    maxMessages: Infinity
-}));
-
-let mailOptions={
-    from:"singhaparna7588@gmail.com",
-    cc:details.mail,
-    to:"nandita7890@outlook.com",
-    subject:details.subject,
-    html:details.content
-};
-transporter.sendMail(mailOptions,function(err,data){
-    if(err){
-        console.error(err);
-        return res.json({msg:"failed"})
-    }
-    else{
-        console.log(data);
-        return res.json({msg:"success"})
-    }
-})*/
-
+    
 
 })
     
