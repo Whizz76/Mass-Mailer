@@ -60,3 +60,4 @@ After that run
 node app.js
 ```
   </ul>
+Make sure that node is installed in your device.
