@@ -44,13 +44,14 @@ Create two files inside the backend folder.
    <li>demo.js</li>
     </ul>
   
- In apiKey.js
-  
+ ### In apiKey.js
+  (Make sure that your sendinblue SMTP account is activated)
+    
 ```sh
   const apiKey="your sendinblue apiKey"
   module.exports=apiKey
 ```
-In demo.js
+### In demo.js
 ```sh
 const demoMail="Your mail address"
 module.exports=demoMail
