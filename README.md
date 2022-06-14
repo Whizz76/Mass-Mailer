@@ -62,3 +62,5 @@ node app.js
 ```
   </ul>
 Make sure that node is installed in your device.
+  <br/>
+  <b> For this project I have used node version 16.15.0 </b>
