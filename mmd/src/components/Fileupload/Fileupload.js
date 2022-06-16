@@ -8,6 +8,7 @@ import * as EmailValidator from 'email-validator';
 import {CSVLink, CSVDownload} from 'react-csv';
 import Announce from '../Load/announce';
 import Load from '../Load/modal';
+import Uploading from '../Load/upload';
 import Invalid from '../Invalid/invalid';
 function Fileupload(){
     const [invalid,setInvalid]=useState([]) // for storing mail-ids.
@@ -21,6 +22,11 @@ function Fileupload(){
     const [csvArrayOfEmails,setCsvArrayOfEmails]=useState([]);  // is a array of objects, where keys="valid mail-ids" values are the valid mail ids
     const [fileinfo,setFileInfo]=useState([]); // contains information related to the file uploaded.
     const navigate=useNavigate(); // navigating to different pages
+    const [upshow,setUpShow]=useState(true);
+    var randomNumber=Math.floor(Math.random()*100000)+Math.floor(Math.random()*10000)+Math.floor(Math.random()*1000)+Math.floor(Math.random()*100)+Math.floor(Math.random()*10);
+    setTimeout(()=>{
+        setUpShow(false)
+    },3000);
     const moveTo=(e)=>{
         fetch("http://localhost:7800/receiverMails",{
             method:"POST",
@@ -126,7 +132,7 @@ function Fileupload(){
     };
     return(
         <>
-        
+        <Uploading show={upshow}/>
         <div className='upload'>
         <Load show={show} close={closeIt} content={content} image={image} />
         <h2>Choose a csv file</h2>
@@ -190,7 +196,9 @@ function Fileupload(){
         <>
         {
             check!=0?(
-                <button id="proceed" className='csv' ref={proceed} onClick={()=>{moveTo("/mail")}}>Proceed   -<>&gt;</></button>
+                <button id="proceed" className='csv' ref={proceed} onClick={()=>{
+                    window.scrollTo(0,0);
+                    moveTo("/mail/"+randomNumber)}}>Proceed   -<>&gt;</></button>
         
 
             ):(

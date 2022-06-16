@@ -4,8 +4,14 @@ import {useNavigate} from 'react-router-dom'
 import Load from '../Load/modal';
 import loader from '../../assets/loader.jpg';
 import Sending from '../sending/sending';
+import Uploading from '../Load/upload';
+import Helper from '../helper/helper';
 function Mail(){
     const navigate=useNavigate();
+    const [upshow,setUpShow]=useState(true);
+    setTimeout(()=>{
+        setUpShow(false)
+    },3000);
     const[name,setName]=useState();
     const[email,setEmail]=useState();
     const[subject,setSubject]=useState();
@@ -13,7 +19,8 @@ function Mail(){
     const [show,setShow]=useState(false);
     const [sendShow,setSendShow]=useState(false);
     const [response,setResponse]=useState();
-   
+    const [showHelper,setShowHelper]=useState(false);
+    const [helpInfo,setHelpInfo]=useState();
     const closeIt=()=>{
         setShow(false);
     }
@@ -37,7 +44,7 @@ function Mail(){
         if (name===undefined){
             setName("");
         }
-        if(email===undefined || content===undefined || email==="" || content===""){
+        if(email===undefined || content===undefined || email==="" || content==="" || name==="" || name===undefined || subject==="" || subject===undefined){
             setShow(true);
         }
         else{
@@ -74,21 +81,34 @@ function Mail(){
 
     return(
         <>
-        
+        <Uploading show={upshow}/>
         <div id="mail">
+        
         <h2>Write Mail</h2>
-        <p>Your Name (Optional)</p>
-        <input onChange={(event)=>{changeName(event)}} type="text" placeholder='Enter Your Name here...' />
+        <p>Your Name *</p>
+        <input onChange={(event)=>{changeName(event)}} type="text" placeholder='Enter Your Name here...' required />
         <p>Your email-address *</p>
         <input onChange={(event)=>{changeEmail(event)}} type="email" placeholder='Enter your mail-id here...' required/>
-        <p>Mail Subject (Optional)</p>
-        <input onChange={(event)=>{changeSubject(event)}} type="text" placeholder='Enter your mail subject here...'/>
+        <p>Mail Subject *</p>
+        <input onChange={(event)=>{changeSubject(event)}} type="text" placeholder='Enter your mail subject here...' required/>
         <p>Mail Content *</p>
         <textarea required onChange={(event)=>{changeContent(event)}} placeholder='Write your mail content here...'></textarea>
-        <button onClick={(event)=>{change(event)}} className='mail'>Mail</button>
-        <Load show={show} close={closeIt} content={"Please atleast fill the required* fields."} image={loader}/>
+        <div id="helper"><button onClick={()=>{
+            setHelpInfo("link");
+            setShowHelper(true);
+        }} >Insert link?</button><button
+        onClick={()=>{
+            setHelpInfo("mail");
+            setShowHelper(true);
+        }}>View recipients</button></div>
+        <button onClick={(event)=>{change(event)
+        }} className='mail'>Mail</button>
+       
+        <Load show={show} close={closeIt} content={"Please fill all the required* fields."} image={loader}/>
         <Sending response={response} show={sendShow}/>
-        
+        <Helper info={helpInfo} show={showHelper} hide={()=>{
+            setShowHelper(false);
+        }}/>
         </div>
         
         </>

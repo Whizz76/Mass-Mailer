@@ -10,7 +10,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home/>}></Route>
       <Route path="/csvUpload" element={<Fileupload/>}></Route>
-      <Route path="/mail" element={<Mail/>}></Route>
+      <Route path="/mail/:id" element={<Mail/>}></Route>
     </Routes>
     
   );

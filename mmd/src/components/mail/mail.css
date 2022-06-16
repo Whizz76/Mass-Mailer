@@ -4,6 +4,29 @@
    min-height: 100vh;
   
 }
+#helper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+#helper button{
+    display: block;
+    margin: 20px;
+    background-color: #142865;
+    border: transparent;
+    color: white;
+    font-family: 'Comic Neue', cursive;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.4);
+    padding: 10px;
+    transition: 0.4s;
+}
+#helper button:hover{
+    transform: scale(1.1);
+    box-shadow: -10px 10px 10px rgba(0,0,0,0.5);
+}
 #warn{
     font-size: 80%!important;
     color: red;

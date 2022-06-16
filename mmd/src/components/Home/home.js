@@ -33,7 +33,7 @@ function Home(){
                 which is then filtered on the basis of mail-ids validity and its existence. User gets a list of 
                 valid mail-ids. User then writes the content to be delivered to the recipients and provides his/her mail-id.
             </p>
-            <h4>copyright <>&copy;</> Aparna | Mass-Mailer | 2022 | All rights reserved</h4>
+            <h4>copyright <>&copy;</> Aparna | Mass-Mailer | 2022 | <>&nbsp;</>All<>&nbsp;</>rights<>&nbsp;</>reserved<>&nbsp;</></h4>
         </footer>
         
         </>

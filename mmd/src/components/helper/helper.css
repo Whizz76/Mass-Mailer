@@ -1,0 +1,17 @@
+.helper p{
+    text-align: center;
+    color: white;
+    font-family:'Barlow Condensed', sans-serif ;
+    font-size: 120%;
+    letter-spacing: 1px;
+    font-size: 90%;
+    margin: 0;
+}
+.helper #helper{
+    text-align: center;
+    color: lightblue;
+    text-decoration: underline;
+    font-size: 90%;
+   width: 100%;
+    display: block;
+}

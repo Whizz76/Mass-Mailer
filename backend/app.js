@@ -11,11 +11,13 @@ app.use(express.json());
 app.listen(7800,()=>{
     console.log("Server listening to port 7800..");
 })
+app.get("/get/receiver/mails",(req,res)=>{
+    return res.send({mails:receiversMails});
+})
 var receiversMails;
 var recipients;
 app.post('/receiverMails',(req,res)=>{
     receiversMails=req.body.mails.split(',');
-    console.log(receiversMails);
     recipients=[{email:`${demoMail}`}]
     receiversMails.forEach(r=>{
         var obj={};
@@ -33,16 +35,20 @@ app.post('/sendMail',(req,res)=>{
         subject:req.body.subject,
         content:con,
     }
-    console.log("hi"+"heloo");
     const client=sib.ApiClient.instance;
     const apiKey=client.authentications['api-key'];
     apiKey.apiKey=apiKeyValue;
     const tranEmailApi=new sib.TransactionalEmailsApi();
-    const sender={
-        email:details.mail,
-        name:details.name
-    }
+    
+    
+      const  sender={
+            email:details.mail,
+            name:details.name
+        }
+
+    
     const receivers=recipients;
+
     tranEmailApi.sendTransacEmail({
         sender,
         to:receivers,
@@ -51,8 +57,6 @@ app.post('/sendMail',(req,res)=>{
     }).then((result)=>{
         res.json({msg:"success"});
         console.log(result);
-        receiversMails=[];
-        recipients=[{email:`${demoMail}`}]
     }).catch((err)=>{
         res.json({msg:"failed"});
         console.log(err)})

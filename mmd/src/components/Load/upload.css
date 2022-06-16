@@ -1,0 +1,9 @@
+.uploadingg{
+    display: block;
+    box-shadow: none;
+    border: transparent;
+    margin: 10px auto;
+}
+.uploadingg:hover{
+    transform: scale(1);
+}
