@@ -61,6 +61,9 @@ After that run
 node app.js
 ```
   </ul>
+
+  ### For PPT and Demo, go to the provided link
+  - https://docs.google.com/document/d/1NtQD3hmpB8BTSdk_J1jpkL-6RFBDip6ijPAtcdKRMl0/edit?usp=sharing
 Make sure that node is installed in your device.
   <br/>
   <b> For this project I have used node version 16.15.0 </b>
