@@ -62,7 +62,7 @@ node app.js
 ```
   </ul>
 
-  #### For PPT and Demo, go to the provided link below - 
+  #### For PPT and Demo, go to the link provided below - 
    https://docs.google.com/document/d/1NtQD3hmpB8BTSdk_J1jpkL-6RFBDip6ijPAtcdKRMl0/edit?usp=sharing
    <br/>
     <br/>
